@@ -77,12 +77,14 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
+        search: true
     }
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -101,7 +103,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="/img/zuozhu.png" class="animated zoomIn">
+            <img src="/img/zuozhu.ico" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">huailei000</a></h1>
@@ -111,6 +113,13 @@
         <p class="header-subtitle">啦啦啦</p>
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
         
 
 
@@ -181,7 +190,9 @@
                             
                                 <a class="fa GitHub" href="#" title="GitHub"></a>
                             
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 博客园" href="/cnblogs" title="博客园"></a>
+                            
+                                <a class="fa 微信" href="/Wechat" title="微信"></a>
                             
                         </ul>
                     </nav>
@@ -230,7 +241,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="/img/zuozhu.png" class="animated zoomIn">
+                <img src="/img/zuozhu.ico" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">huailei000</a></h1>
@@ -261,7 +272,9 @@
                             
                                 <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
                             
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 博客园" target="_blank" href="/cnblogs" title="博客园"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
                             
                         </ul>
             </nav>
@@ -356,7 +369,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>这个是不是主页</p>
+        <h2 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h2><p>哈哈杀害</p>
+<h2 id="也是"><a href="#也是" class="headerlink" title="也是"></a>也是</h2><p>阿萨大大</p>
+<h2 id="萨达"><a href="#萨达" class="headerlink" title="萨达"></a>萨达</h2><p>啊实打实打算v</p>
+<h1 id="啊大苏打"><a href="#啊大苏打" class="headerlink" title="啊大苏打"></a>啊大苏打</h1><p>啊萨达飒飒<br>*大苏打<br><strong>阿萨大大</strong><br><del>删除线</del><br>—下划线—</p>
 
       
     </div>
@@ -413,7 +429,9 @@
       
           
         <p>重新开始<br>新的文章</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>sdadasdasda</p>
+<h3 id="Quick"><a href="#Quick" class="headerlink" title="Quick"></a>Quick</h3><p>ADadas</p>
+
       
     </div>
     
@@ -523,6 +541,23 @@
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
